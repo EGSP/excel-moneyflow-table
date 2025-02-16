@@ -1,11 +1,11 @@
-Private Sub Worksheet_Change(ByVal Target As Range)
+Private Sub Auto_Date_Insert(ByVal Target As Range)
     Dim tbl As ListObject
     Dim dCol As ListColumn
     Dim changedRow As Range
     Dim dateCell As Range
 
     ' Сообщение о входе в обработчик события
-    Debug.Print "Worksheet_Change вызван для ячейки/диапазона: " & Target.Address
+    Debug.Print "Auto_Date_Insert вызван для ячейки/диапазона: " & Target.Address
 
     ' Попытка получить таблицу "Таблица1"
     On Error Resume Next
