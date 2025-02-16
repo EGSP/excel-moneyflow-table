@@ -1,11 +1,11 @@
-Private Sub Worksheet_Change(ByVal Target As Range)
+Private Sub Auto_Update_PivotTable(ByVal Target As Range)
     Dim ws As Worksheet, pt As PivotTable
 
     On Error GoTo exitHandler
     Application.EnableEvents = False
 
-    Debug.Print "=== Worksheet_Change triggered at " & Now & " ==="
-    Debug.Print "Changed range: " & Target.Address
+    Debug.Print " Auto_Update_PivotTable вызвано в " & Now
+    Debug.Print "Изменяемая область: " & Target.Address
 
     ' Проверяем, затронута ли таблица "Таблица1"
     If Not Intersect(Target, Me.Range("Таблица1[#All]")) Is Nothing Then
@@ -24,5 +24,5 @@ Private Sub Worksheet_Change(ByVal Target As Range)
 
 exitHandler:
     Application.EnableEvents = True
-    Debug.Print "=== Worksheet_Change завершён в " & Now & " ==="
+    Debug.Print " Auto_Update_PivotTable завершён в " & Now & " "
 End Sub
